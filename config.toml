@@ -1,0 +1,22 @@
+[course]
+name = "Física I"
+
+[schedule]
+week = "par"
+day = "lunes"
+time = "8:00 – 11:00"
+
+[[members]]
+firstname = "Ana"
+lastname = "López"
+student_id = "12345"
+
+[[members]]
+firstname = "María Esperanza"
+lastname = "Fernández-Gutiérrez"
+student_id = "67890"
+
+[[members]]
+firstname = "Carlos"
+lastname = "Dominguez"
+student_id = "24680"

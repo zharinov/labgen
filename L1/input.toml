@@ -1,0 +1,33 @@
+title = "Laboratorio №1"
+subtitle = "Metrología"
+
+caliper_precision = 0.05    # A_c
+micrometer_precision = 0.01 # A_p
+
+height = [
+    # Measurements
+    25.45,
+    25.50,
+    25.40,
+    25.35,
+    25.55,
+    25.38,
+    25.42,
+    25.48,
+    25.52,
+    25.44,
+]
+
+diameter = [
+    # Measurements
+    8.15,
+    8.22,
+    8.18,
+    8.25,
+    8.19,
+    8.21,
+    8.17,
+    8.23,
+    8.20,
+    8.16,
+]
