@@ -1,0 +1,35 @@
+{
+    "name": "Labgen Development (Dockerfile)",
+    "build": {
+        "dockerfile": "Dockerfile"
+    },
+    
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "myriad-dreamin.tinymist",
+                "ms-python.python",
+                "charliermarsh.ruff",
+                "ms-python.flake8"
+            ],
+            "settings": {
+                "python.defaultInterpreterPath": "/usr/local/bin/python",
+                "files.associations": {
+                    "*.typ": "typst"
+                },
+                "tinymist.outputPath": "$root/target/$dir/$name",
+                "tinymist.exportPdf": "onSave"
+            }
+        }
+    },
+    
+    "forwardPorts": [],
+    
+    "remoteUser": "vscode",
+    
+    "mounts": [
+        "source=${localWorkspaceFolder}/.venv,target=${containerWorkspaceFolder}/.venv,type=bind,consistency=cached"
+    ],
+    
+    "postCreateCommand": "uv sync"
+}

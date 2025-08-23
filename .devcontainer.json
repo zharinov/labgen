@@ -1,0 +1,38 @@
+{
+    "name": "Labgen Development",
+    "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+    
+    "features": {
+        "ghcr.io/devcontainers/features/python:1": {
+            "version": "3.12"
+        },
+        "ghcr.io/devcontainers/features/git:1": {}
+    },
+    
+    "postCreateCommand": "bash .devcontainer/setup.sh",
+    
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "myriad-dreamin.tinymist",
+                "ms-python.python",
+                "charliermarsh.ruff",
+                "ms-python.flake8"
+            ],
+            "settings": {
+                "python.defaultInterpreterPath": "/usr/local/bin/python",
+                "files.associations": {
+                    "*.typ": "typst"
+                }
+            }
+        }
+    },
+    
+    "forwardPorts": [],
+    
+    "remoteUser": "vscode",
+    
+    "mounts": [
+        "source=${localWorkspaceFolder}/.venv,target=${containerWorkspaceFolder}/.venv,type=bind,consistency=cached"
+    ]
+}
