@@ -41,3 +41,51 @@ $ e_"abs" = sqrt((sum (h_i - overline(h))^2) / (n (n - 1))) $
 El error de apreciación se toma como la apreciación del instrumento (resolución). El error reportado es el mayor entre ambos. El valor acotado se informa como:
 
 $ h = overline(h) plus.minus e $
+
+== Teoría de propagación de errores
+
+#no-first-line-indent([
+  Para una función $f(x, y)$ con variables independientes $x ± Δ x$ y $y ± Δ y$:
+
+
+  #align(center, grid(
+    // stroke: 1pt,
+    columns: (1fr, 1fr),
+    inset: (x: 10pt, y: 10pt),
+    align: (horizon + center, horizon + center),
+    [
+      $Δ f = abs((∂f)/(∂x)) Δ x + abs((∂f)/(∂y)) Δ y$
+    ],
+    [
+      $Δ f = sqrt(((∂f)/(∂x) Δ x)^2 + ((∂f)/(∂y) Δ y)^2)$
+    ],
+
+    [
+      _(propagación lineal)_
+    ],
+    [
+      _(propagación cuadrática)_
+    ],
+  ))
+
+
+  La propagación cuadrática es más precisa cuando los errores son aleatorios e independientes. Sean:
+
+  $ A = abs((∂f)/(∂x)) Δ x >= 0 $
+
+  $ B = abs((∂f)/(∂y)) Δ y >= 0 $
+
+  $ Δ f_"lin" = A + B $
+
+  $ Δ f_"cuad" = sqrt(A^2 + B^2) $
+
+  Elevando al cuadrado:
+
+  $ (A + B)^2 = A^2 + B^2 + 2A B ≥ A^2 + B^2 = (sqrt(A^2 + B^2))^2 $
+
+  $ A + B ≥ sqrt(A^2 + B^2) $
+
+  $ Δ f_"lin" ≥ Δ f_"cuad" $
+])
+
+#pagebreak()

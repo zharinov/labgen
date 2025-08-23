@@ -23,6 +23,38 @@ make build
 1. Run calculations (`calc.py` if present)
 2. Compile the Typst document to PDF
 
+### Lab Report Workflow
+
+Here's the complete process for creating a lab report:
+
+1. **Configure course details** - Edit `config.toml` in the project root:
+   - Set course name, schedule, and student member information
+   
+2. **Create lab directory** - Each lab gets its own directory (e.g., `L1/`, `L2/`)
+
+3. **Set up lab data** - Create `input.toml` in the lab directory:
+   - Define lab title, subtitle, and parameters
+   - Include measurement data and experimental values
+   
+4. **Write calculations** - Create `calc.py` to process the input data:
+   - Load data from `input.toml`
+   - Perform statistical calculations and error analysis
+   - Save results to `output.toml` for use in the report
+   
+5. **Write report content** - Create Typst files for each section:
+   - Break content into logical sections (e.g., `00-intro.typ`, `01-analysis.typ`)
+   - Use data from `output.toml` in your Typst templates
+   
+6. **Create main template** - Set up `main.typ`:
+   - Import shared styling from `../common.typ`
+   - Load configuration and output data
+   - Include all section files
+   
+7. **Build the report** - Run `make build` to generate the final PDF:
+   - Executes `calc.py` if present
+   - Compiles Typst document to PDF
+   - Output: `{lab_directory_name}.pdf`
+
 ### Development
 
 For auto-rebuild on file changes:

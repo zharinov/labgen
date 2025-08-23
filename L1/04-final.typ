@@ -4,60 +4,8 @@
 
 = Actividad 4
 
-Cálculo del perímetro y área de un rectángulo de lados iguales al diámetro y altura del cilindro, y del volumen del cilindro, aplicando propagación de errores lineal y cuadrática.
-
-== Teoría de propagación de errores
-
 #no-first-line-indent([
-  Para una función $f(x, y)$ con variables independientes $x ± Δ x$ y $y ± Δ y$:
-
-
-  #align(center, grid(
-    // stroke: 1pt,
-    columns: (1fr, 1fr),
-    inset: (x: 10pt, y: 10pt),
-    align: (horizon + center, horizon + center),
-    [
-      $Δ f = abs((∂f)/(∂x)) Δ x + abs((∂f)/(∂y)) Δ y$
-    ],
-    [
-      $Δ f = sqrt(((∂f)/(∂x) Δ x)^2 + ((∂f)/(∂y) Δ y)^2)$
-    ],
-
-    [
-      _(propagación lineal)_
-    ],
-    [
-      _(propagación cuadrática)_
-    ],
-  ))
-
-
-  La propagación cuadrática es más precisa cuando los errores son aleatorios e independientes. Sean:
-
-  $ A = abs((∂f)/(∂x)) Δ x >= 0 $
-
-  $ B = abs((∂f)/(∂y)) Δ y >= 0 $
-
-  $ Δ f_"lin" = A + B $
-
-  $ Δ f_"cuad" = sqrt(A^2 + B^2) $
-
-  Elevando al cuadrado:
-
-  $ (A + B)^2 = A^2 + B^2 + 2A B ≥ A^2 + B^2 = (sqrt(A^2 + B^2))^2 $
-
-  $ A + B ≥ sqrt(A^2 + B^2) $
-
-  $ Δ f_"lin" ≥ Δ f_"cuad" $
-])
-
-#pagebreak()
-
-
-#no-first-line-indent([
-
-  == Perímetro del rectángulo
+  == Perímetro del rectángulo (hipotético)
 
   $
     P = 2(D + h) = 2(#values.diameter_mean + #values.height_mean) = #values.perimeter_value
@@ -74,18 +22,20 @@ Cálculo del perímetro y área de un rectángulo de lados iguales al diámetro 
   $
 
   #align(center)[
-    #v(15pt)
-    #box(stroke: 0.5pt, inset: 20pt)[
+    #v(5pt)
+    #box(stroke: 0.5pt, inset: 10pt)[
       #set align(right)
 
       $P_"lin" = #values.perimeter_linear_result$
 
       $P_"cuad" = #values.perimeter_quadratic_result$
     ]
-    #v(15pt)
+    #v(5pt)
   ]
+  
+  #v(10pt)
 
-  == Área del rectángulo
+  == Área del rectángulo (hipotético)
 
   $
     A = D times h = #values.diameter_mean times #values.height_mean = #values.area_value
@@ -104,14 +54,14 @@ Cálculo del perímetro y área de un rectángulo de lados iguales al diámetro 
   $
 
   #align(center)[
-    #v(15pt)
-    #box(stroke: 0.5pt, inset: 20pt)[
+    #v(5pt)
+    #box(stroke: 0.5pt, inset: 10pt)[
       #set align(right)
       $A_"lin" = #values.area_linear_result_mm = #values.area_linear_result_cm$
 
       $A_"cuad" = #values.area_quadratic_result_mm = #values.area_quadratic_result_cm$
     ]
-    #v(15pt)
+    #v(5pt)
   ]
 
   == Volumen del cilindro
@@ -125,7 +75,7 @@ Cálculo del perímetro y área de un rectángulo de lados iguales al diámetro 
     [(donde $π = #values.pi_result$)],
   )
 
-  #v(30pt)
+  #v(15pt)
 
   $
     (∂V)/(∂π) = (D^2 h)/4 = #values.volume_partial_pi
@@ -139,7 +89,7 @@ Cálculo del perímetro y área de un rectángulo de lados iguales al diámetro 
     (∂V)/(∂h) = (π D^2)/4 = #values.volume_partial_h
   $
 
-  #v(30pt)
+  #v(15pt)
 
   $
     Δ V_"lin" = (D^2 h)/4 Δ π + (π D h)/2 Δ D + (π D^2)/4 Δ h = #values.volume_linear_error
