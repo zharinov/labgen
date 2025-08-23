@@ -119,6 +119,7 @@
             align: (left, left, right),
             column-gutter: (1em, 1em),
             row-gutter: 0.5em,
+            inset: (y: 2pt, right: 3pt),
             ..for member in members {
               (
                 smallcaps[#member.lastname],
